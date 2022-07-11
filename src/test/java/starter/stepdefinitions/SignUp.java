@@ -59,7 +59,7 @@ public class SignUp {
 
     @And("I click on Sign Up button on pop up")
     public void iClickOnSignUpButtonOnPopUp() {
-        homePage.signUpButtonOnPopUp.click();
+        signUpSteps.clickOnSignUpButtonOnPopUp();
 
     }
 
@@ -80,7 +80,7 @@ public class SignUp {
     @And("I see the successful sign up message")
     public void iSeeTheSuccessfulSignUpMessage() {
         signUpSteps.seeSuccessfulSignUp();
-        assertEquals(SUCCESSFULSIGNUP, homePage.seeSuccessfulSignUp());
+        assertEquals(SUCCESSFULSIGNUP, homePage.seeSuccessfulSignUpMessage());
     }
 
     @And("I fill in with already existing user credentials")

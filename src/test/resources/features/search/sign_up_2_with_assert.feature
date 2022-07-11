@@ -1,6 +1,6 @@
 Feature: Sign Up with assert
 
-  Scenario: Successful sign up
+  Scenario: Successful sign up with assert
     Given I navigate to Demoblaze homepage
     When I click on Sign Up button
     And I fill in with valid username and password

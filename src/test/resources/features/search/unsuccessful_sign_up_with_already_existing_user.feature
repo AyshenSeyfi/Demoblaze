@@ -1,6 +1,6 @@
 Feature: Sign Up with already existing user
 
-  Scenario: Successful sign up
+  Scenario: Successful sign up with already existing user
     Given I navigate to Demoblaze homepage
     And I click on Sign Up button
     And I fill in with already existing user credentials

@@ -1,3 +1,4 @@
+@web
 Feature: Sign Up
 
   Scenario: Successful sign up
@@ -10,7 +11,3 @@ Feature: Sign Up
     And I log in with the signed up user
     And I click on log in button on pop up
     And  I should see a welcome message
-
-
-
-

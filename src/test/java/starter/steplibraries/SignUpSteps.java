@@ -1,10 +1,8 @@
 package starter.steplibraries;
 
 import Configuration.ConfigurationReader;
-import lombok.SneakyThrows;
 import lombok.var;
 import net.thucydides.core.annotations.Step;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import starter.webpages.HomePage;
 
 import java.io.IOException;
@@ -39,12 +37,17 @@ public class SignUpSteps {
 
     @Step
     public void seeSuccessfulSignUp(){
-        homePage.seeSuccessfulSignUp();
-
+        homePage.seeSuccessfulSignUpMessage();
     }
 
     @Step
     public void seeThisUserAlreadyExistsAlert(){
         homePage.ThisUserAlreadyExistsAlert();
+    }
+
+    @Step
+    public void clickOnSignUpButtonOnPopUp(){
+        homePage.signUpButtonOnPopUp.click();
+
     }
 }

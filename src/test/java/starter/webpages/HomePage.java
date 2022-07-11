@@ -28,6 +28,13 @@ public class HomePage extends PageObject {
     public
     WebElement signUpButtonOnPopUp;
 
+    @FindBy(xpath = "//a[text()='Samsung galaxy s6']")
+    WebElement productPhone;
+
+    @FindBy(xpath = "//a[text()='Add to cart']")
+    WebElement addToCartButton;
+
+
 
     public HomePage(WebDriver webDriver){
 
@@ -62,7 +69,7 @@ public class HomePage extends PageObject {
         getDriver().switchTo().alert().accept();
     }
 
-     public String seeSuccessfulSignUp(){
+     public String seeSuccessfulSignUpMessage(){
          waitFor(ExpectedConditions.alertIsPresent());
          String successfullmessage = getDriver().switchTo().alert().getText();
          return successfullmessage;
