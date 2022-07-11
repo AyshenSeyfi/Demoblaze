@@ -31,6 +31,10 @@ public class SignUpSteps {
     }
 
     @Step
+    public void clickOnSignUpButtonOnPopUp(){
+        homePage.signUpButtonOnPopUp.click();
+    }
+    @Step
     public void dismissAlert(){
         homePage.dismissAlert();
     }
@@ -43,11 +47,5 @@ public class SignUpSteps {
     @Step
     public void seeThisUserAlreadyExistsAlert(){
         homePage.ThisUserAlreadyExistsAlert();
-    }
-
-    @Step
-    public void clickOnSignUpButtonOnPopUp(){
-        homePage.signUpButtonOnPopUp.click();
-
     }
 }

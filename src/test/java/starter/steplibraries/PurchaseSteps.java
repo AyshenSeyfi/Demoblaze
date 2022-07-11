@@ -21,6 +21,22 @@ public class PurchaseSteps {
 
     @Step
     public void clickOnProduct(){
-
+        purchasePage.Product1.click();
+    }
+    @Step
+    public void clickOnAddToCartButton(){
+        purchasePage.addToCartButton.click();
+    }
+    @Step
+    public void clickOnCartButton(){
+        purchasePage.cartButton.click();
+    }
+    @Step
+    public void clickOnPlaceOrder(){
+        purchasePage.placeOrderButton.click();
+    }
+    @Step
+    public void clickOnPurchaseButton(){
+        purchasePage.purchaseButton.click();
     }
 }

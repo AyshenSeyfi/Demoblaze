@@ -30,38 +30,35 @@ import static org.junit.Assert.assertTrue;
 public class Purchase extends PageObject {
     @Steps
     PurchaseSteps purchaseSteps;
-    SignUpSteps signUpSteps;
 
     HomePage homePage;
     PurchasePage purchasePage;
-    WebDriver webDriver;
 
     public Purchase() {homePage = new HomePage(getDriver());}
 
     @And("I click on the product")
     public void iClickOnTheProduct() {
-
-        purchasePage.Product1.click();
+        purchaseSteps.clickOnProduct();
     }
-
 
     @And("I click on Add to Cart button")
     public void iClickOnAddToCartButton() {
-        purchasePage.addToCartButton.click();
+        purchaseSteps.clickOnAddToCartButton();
     }
+
     @And("I dismiss the message")
     public void iDismissTheMessage() {
-        signUpSteps.dismissAlert();
+        homePage.dismissAlert();
     }
 
     @When("I click on Cart button")
     public void iClickOnCartButton() {
-        purchasePage.cartButton.click();
+        purchaseSteps.clickOnCartButton();
     }
 
     @And("I click on Place order")
     public void iClickOnPlaceOrder() {
-        purchasePage.placeOrderButton.click();
+        purchaseSteps.clickOnPlaceOrder();
     }
 
     @And("I fill in mandatory information")
@@ -74,16 +71,13 @@ public class Purchase extends PageObject {
         purchasePage.fillInPurchaseDetails(name,creditCard);
     }
 
-
     @Then("I click on Purchase button")
     public void iClickOnPurchaseButton() {
-
-        purchasePage.purchaseButton.click();
+        purchaseSteps.clickOnPurchaseButton();
     }
 
     @And("I should see successful purchase message")
     public void iShouldSeeSuccessfulPurchaseMessage() {
-
         assertTrue("Thank you for your purchase!", purchasePage.ThankYouForPurchaseMessage());
     }
 }

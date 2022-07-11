@@ -44,6 +44,7 @@ public class SignUp {
     public void iClickOnSignUpButton() {
         signUpSteps.clickOnSignUpButton();
     }
+
     @And("I fill in with valid username and password")
     public void iFillInWithValidUsernameAndPassword() {
 
