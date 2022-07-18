@@ -1,6 +1,7 @@
 @web
-Feature: Buy item
+Feature: Purchase item
 
+  @new
   Scenario: Purchase item with new user
     Given I navigate to Demoblaze homepage
     And I click on Sign Up button
@@ -22,6 +23,7 @@ Feature: Buy item
     Then I click on Purchase button
     And I should see successful purchase message
 
+@existing
     Scenario: Purchase item with already existing user
     Given I navigate to Demoblaze homepage
       And I click on Login button
@@ -29,6 +31,7 @@ Feature: Buy item
         | username  | password |
         | ayshennew | test123  |
       And I click on log in button on pop up
+      And I should see a welcome message
       When I click on the product
       And I click on Add to Cart button
       And I dismiss the message

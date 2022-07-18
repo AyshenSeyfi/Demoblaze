@@ -1,14 +1,12 @@
 package starter.webpages;
 
 import net.serenitybdd.core.pages.PageObject;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage extends PageObject {
 
-    WebDriver webDriver;
+    //WebDriver webDriver;
 
     @FindBy(xpath = "//a[@id='login2']")
     WebElement logInButton;
@@ -18,20 +16,15 @@ public class LoginPage extends PageObject {
     WebElement logInButtonOnPopUp;
 
     @FindBy(id = "loginusername")
+            public
     WebElement loginUsernameField;
 
-    @FindBy(id = "loginpassword")
-    WebElement loginPasswordField;
+    @FindBy(id = "loginpassword") public WebElement loginPasswordField;
 
     @FindBy(xpath = "//a[@id='nameofuser']")
     WebElement welcomeMessage;
 
 
-    public LoginPage(WebDriver webDriver) {
-        PageFactory.initElements(webDriver, this);
-        this.webDriver = webDriver;
-
-    }
     public void clickOnLoginButton(){
         logInButton.click();
     }

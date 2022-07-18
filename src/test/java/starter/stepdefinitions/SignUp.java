@@ -4,11 +4,11 @@ package starter.stepdefinitions;
 import TestData.DefaultUser;
 import TestData.UIConstants;
 import io.cucumber.datatable.DataTable;
-import io.cucumber.java.en.Then;
-import models.UserModel;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import models.UserModel;
 import net.serenitybdd.core.Serenity;
 import net.thucydides.core.annotations.Steps;
 import starter.steplibraries.SignUpSteps;
@@ -20,20 +20,16 @@ import java.util.Map;
 
 import static TestData.UIConstants.SUCCESSFULSIGNUP;
 import static TestData.UIConstants.THISUSERALREADYEXISTSMESSAGE;
-import static net.serenitybdd.core.Serenity.getDriver;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
 
 public class SignUp {
-    @Steps
+    @Steps(shared = true)
     SignUpSteps signUpSteps;
-
+    @Steps(shared = true)
     HomePage homePage;
-    private LoginPage loginPage;
+    @Steps(shared = true)
+    LoginPage loginPage;
 
-    public SignUp() {
-        homePage = new HomePage(getDriver());
-    }
 
     @Given("I navigate to Demoblaze homepage")
     public void iNavigateToDemoblazeHomepage() {

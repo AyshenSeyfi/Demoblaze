@@ -1,27 +1,23 @@
 package starter.steplibraries;
 
 import Configuration.ConfigurationReader;
-import lombok.var;
 import net.thucydides.core.annotations.Step;
+import net.thucydides.core.annotations.Steps;
 import starter.webpages.HomePage;
-
-import java.io.IOException;
 
 import static net.thucydides.core.webdriver.ThucydidesWebDriverSupport.getDriver;
 
 public class SignUpSteps {
 
-    private ConfigurationReader configurationReader;
-    private HomePage homePage;
+    @Steps(shared = true)
+    HomePage homePage;
+    @Steps(shared = true)
+    ConfigurationReader configurationReader;
 
-    public SignUpSteps() throws IOException {
-        configurationReader = new ConfigurationReader();
-        homePage = new HomePage(getDriver());
-    }
 
     @Step
     public void navigateToHomePage(){
-        var url = configurationReader.getApplicationUrl();
+        String url = configurationReader.getApplicationUrl();
         getDriver().get(url);
     }
 

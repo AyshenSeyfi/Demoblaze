@@ -1,6 +1,9 @@
+@web
 Feature: Login
 
-  Scenario: Successful login with existing user
+  Test log in functionality
+
+  Scenario: Login with existing user
     Given I navigate to Demoblaze homepage
     And I click on Login button
     And I fill in existing user credentials

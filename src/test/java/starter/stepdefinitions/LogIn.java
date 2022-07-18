@@ -1,26 +1,29 @@
 package starter.stepdefinitions;
+
+import Utils.CustomActions;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
 import net.thucydides.core.annotations.Steps;
 import starter.steplibraries.LoginSteps;
+import starter.webpages.HomePage;
 import starter.webpages.LoginPage;
+
 import java.util.List;
 import java.util.Map;
 
-import static net.serenitybdd.core.Serenity.getDriver;
 import static org.junit.Assert.assertTrue;
 
 public class LogIn {
+    @Steps(shared = true)
     LoginPage loginPage;
-
-    @Steps
+    @Steps(shared = true)
     LoginSteps loginSteps;
+    @Steps(shared = true)
+    CustomActions customActions;
+    @Steps(shared = true)
+    HomePage homePage;
 
-    public LogIn(){
-        loginPage = new LoginPage(getDriver());
-    }
 
     @And("I click on Login button")
     public void iClickOnLoginButton() {
@@ -35,7 +38,10 @@ public class LogIn {
         String username = data.get(0).get("username");
         String password = data.get(0).get("password");
 
-        loginPage.fillInLoginDetails(username, password);
+//       loginPage.fillInLoginDetails(username, password);
+
+        customActions.type(loginPage.loginUsernameField, username);
+        customActions.type(loginPage.loginPasswordField, password);
     }
 
     @And("I click on log in button on pop up")
